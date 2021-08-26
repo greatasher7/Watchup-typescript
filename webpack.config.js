@@ -3,11 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-    entry: { bundle: './src/index.tsx' },
+    entry: { 
+        polyfills: '@babel/polyfill',
+        bundle: './src/index.tsx' 
+    },
     resolve: { extensions: ['.tsx', '.ts', '.js'] },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -21,9 +25,9 @@ module.exports = {
                             plugins: [
                                 'react-hot-loader/babel',
                             ]
-                        } 
+                        },
                     },
-                ]
+                ],
             },
             {   // 2
                 test: /\.css$/,
@@ -46,6 +50,7 @@ module.exports = {
     ],
     devServer: {
         hot: true,
-        open: true
+        open: true,
+        historyApiFallback: true
     },
 }

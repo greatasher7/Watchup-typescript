@@ -1,22 +1,21 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
 import {hot} from 'react-hot-loader';
-import './styles.css';
-import ImagePng from './react.png'; // create declaration.d.ts file and declare the type
-import LogoSvg from './logo.svg';
+import GlobalStyle from './Styles/global-style';
+import RouterComponent from './Components/Router';
 
-const App = () => {
-
-    const [count, setCount] = useState(0);
-
-    return(
-        <>
-            <h1>Hello world!!!!!!!!!!!!! {count}</h1>
-            <button onClick={() => {setCount(count + 1)}}>Click to +</button>
-            <button onClick={() => {setCount(count - 1)}}>Click to -</button>
-            <img src={ImagePng} alt="logo" className="logoImg" />
-            <img src={LogoSvg} alt="logo" className="logoImg" />
-        </>
-    )
+class App extends Component {
+    
+    render(){
+        return(
+            <>
+                <GlobalStyle />
+                <Router>
+                    <RouterComponent/>
+                </Router>
+            </>
+        )
+    }
 }
 
 export default hot(module)(App);
