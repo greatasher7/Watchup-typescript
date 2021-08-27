@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import ImagePng from "../Assets/react.png"; // create declaration.d.ts file and declare the type
 import LogoSvg from "../Assets/logo.svg";
+// react-router-dom에서 제공하는 props의 type
+import {RouteComponentProps} from "react-router-dom";
 
-const Home = (props) => {
+
+function Home (props: RouteComponentProps): JSX.Element {
   const [count, setCount] = useState(0);
   console.log(props);
   return (
