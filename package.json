@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development --hot",
-    "build": "webpack --mode production && node server.js",
-    "start:express": "node server.js"
+    "build": "webpack --mode production && node server.js"
   },
   "keywords": [],
   "author": "",
