@@ -1,15 +1,12 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Home from "../Routes/Home";
 import Data from "../Routes/Data";
 import Header from "./Header";
 
-
 function RouterComponent(): JSX.Element {
-
   return (
     <>
-      <h1>this is Router components</h1>
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
@@ -18,6 +15,6 @@ function RouterComponent(): JSX.Element {
       </Switch>
     </>
   );
-};
+}
 
 export default RouterComponent;

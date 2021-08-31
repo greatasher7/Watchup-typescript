@@ -10,4 +10,10 @@ export interface IWeather {
     humidity: number;
   };
   name: string;
+  id: number;
+}
+
+export interface CityProps {
+  name: string;
+  temp: number;
 }

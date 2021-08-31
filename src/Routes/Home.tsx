@@ -1,29 +1,40 @@
 import React from "react";
-// react-router-dom에서 제공하는 props의 type
-import { RouteComponentProps } from "react-router-dom";
+import styled from "styled-components";
 import { IWeather } from "./Types";
 import useGetData from "./useGetData";
+import WeatherBox from "../Components/WeatherBox";
 
-function Home(props: RouteComponentProps): JSX.Element {
+const Title = styled.h1`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  margin-bottom: 100px;
+`;
+
+const SectionCity = styled.section`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+`;
+
+function Home(): JSX.Element {
   const result = useGetData();
-  console.log("result at home", result);
 
   return (
     <>
-      <h1>this is main page</h1>
-      <p>
-        Temperature of Seoul :{" "}
+      <Title>this is main page</Title>
+      <SectionCity>
         {!result
           ? "no data"
-          : result.map((region: IWeather, i: number) => {
-              return (
-                <span key={i}>
-                  {region.main.temp}
-                  {region.name}
-                </span>
-              );
-            })}
-      </p>
+          : result.map((region: IWeather) => (
+              <WeatherBox
+                key={region.id}
+                name={region.name}
+                temp={region.main.temp}
+              />
+            ))}
+      </SectionCity>
     </>
   );
 }
