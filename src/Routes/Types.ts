@@ -11,9 +11,14 @@ export interface IWeather {
   };
   name: string;
   id: number;
+  wind: {
+    speed: number;
+    deg: number;
+  };
 }
 
 export interface CityProps {
   name: string;
   temp: number;
+  windSpeed: number;
 }

@@ -9,13 +9,14 @@ const Title = styled.h1`
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  margin-bottom: 100px;
+  margin: 50px 0;
 `;
 
 const SectionCity = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 5px;
 `;
 
 function Home(): JSX.Element {
@@ -32,6 +33,7 @@ function Home(): JSX.Element {
                 key={region.id}
                 name={region.name}
                 temp={region.main.temp}
+                windSpeed={region.wind.speed}
               />
             ))}
       </SectionCity>

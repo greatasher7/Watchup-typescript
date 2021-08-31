@@ -1,10 +1,10 @@
 export const CITIES = [
   "Seoul",
   "New York",
-  "Paris",
+  "Mould Bay",
   "London",
-  "Ann Arbor",
+  "Jakarta",
   "Brasilia",
-  "Sydney",
+  "Kaiken",
   "Dubai",
 ];
