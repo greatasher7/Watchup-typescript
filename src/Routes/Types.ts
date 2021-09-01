@@ -20,5 +20,6 @@ export interface IWeather {
 export interface CityProps {
   name: string;
   temp: number;
+  weather: string;
   windSpeed: number;
 }

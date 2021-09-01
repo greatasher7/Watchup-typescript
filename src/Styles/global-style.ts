@@ -3,6 +3,9 @@ import { reset } from "styled-reset";
 
 export default createGlobalStyle`
     ${reset}
+    :root{
+        font-size: 1vw;
+    }
     body{
         padding: 10px;
         background-color: rgb(40, 40, 40);

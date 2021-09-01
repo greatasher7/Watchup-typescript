@@ -8,15 +8,16 @@ const Title = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
-  margin: 50px 0;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  color: #c4c5ac;
 `;
 
 const SectionCity = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 5px;
+  grid-gap: 10px;
 `;
 
 function Home(): JSX.Element {
@@ -24,7 +25,7 @@ function Home(): JSX.Element {
 
   return (
     <>
-      <Title>this is main page</Title>
+      <Title>Worldwide Weather</Title>
       <SectionCity>
         {!result
           ? "no data"
@@ -33,6 +34,7 @@ function Home(): JSX.Element {
                 key={region.id}
                 name={region.name}
                 temp={region.main.temp}
+                weather={region.weather[0].main}
                 windSpeed={region.wind.speed}
               />
             ))}
