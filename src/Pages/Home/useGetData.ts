@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { CITIES } from "./Citis";
-import { IWeather } from "./Types";
+import { CITIES } from "./CityList";
+import { IWeather } from "../../Global/Types";
 
 function useGetData(): IWeather[] {
   const api = axios.create({
