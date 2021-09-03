@@ -1,5 +1,5 @@
 import React from "react";
-import { IWeather } from "../../Global/Types";
+import { IWeatherData } from "../../Global/Types";
 import useGetData from "./useGetData";
 import WeatherBox from "../../Components/WeatherBox";
 import { Title, SectionCity } from "./HomeStyle";
@@ -13,7 +13,7 @@ function Home(): JSX.Element {
       <SectionCity>
         {!result
           ? "no data"
-          : result.map((region: IWeather) => (
+          : result.map((region: IWeatherData) => (
               <WeatherBox
                 key={region.id}
                 name={region.name}

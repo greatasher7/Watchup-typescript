@@ -1,9 +1,10 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
+import { IPropsMatch } from "../../Global/Types";
 
-function Detail(props: RouteComponentProps): JSX.Element {
-  console.log(props);
-  return <h1>Detail pages {props.match.params.id}</h1>;
+function Detail({ match }: RouteComponentProps<IPropsMatch>): JSX.Element {
+  console.log("");
+  return <h1>Detail pages {match.params.id}</h1>;
 }
 
 export default Detail;

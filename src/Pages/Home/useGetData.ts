@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { CITIES } from "./CityList";
-import { IWeather } from "../../Global/Types";
+import { IWeatherData } from "../../Global/Types";
 
-function useGetData(): IWeather[] {
+function useGetData(): IWeatherData[] {
   const api = axios.create({
     baseURL: "https://api.openweathermap.org/data/2.5/weather?",
     params: {
@@ -14,7 +14,7 @@ function useGetData(): IWeather[] {
 
   const interval = useRef<ReturnType<typeof setInterval>>();
 
-  const [data, setData] = useState<IWeather[]>([]);
+  const [data, setData] = useState<IWeatherData[]>([]);
 
   // 각 도시의 데이터를 담을 배열
   let arr = [];

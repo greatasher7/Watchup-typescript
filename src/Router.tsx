@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect, Switch, RouteComponentProps } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import { Home, Detail } from "./Pages";
 
 function RouterComponent(): JSX.Element {
@@ -7,10 +7,7 @@ function RouterComponent(): JSX.Element {
     <>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route
-          path="/city-detail/:id"
-          render={(props) => <Detail {...props} key={props.match.params.id} />}
-        />
+        <Route path="/city-detail/:id" component={Detail} />
         <Redirect from="*" to="/" />
       </Switch>
     </>

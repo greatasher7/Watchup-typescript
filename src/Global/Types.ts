@@ -1,4 +1,4 @@
-export interface IWeather {
+export interface IWeatherData {
   weather: {
     main: string;
   }[];
@@ -17,9 +17,13 @@ export interface IWeather {
   };
 }
 
-export interface CityProps {
+export interface IPropsWeatherBox {
   name: string;
   temp: number;
   weather: string;
   windSpeed: number;
+}
+
+export interface IPropsMatch {
+  id: string;
 }

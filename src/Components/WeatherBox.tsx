@@ -1,5 +1,5 @@
 import React from "react";
-import { CityProps } from "../Global/Types";
+import { IPropsWeatherBox } from "../Global/Types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Global/Fontawesome";
 import { CLink, TempBox, Info } from "./WeatherBoxStyle";
@@ -21,7 +21,7 @@ const FilterWeather = (weather: string) => {
   }
 };
 
-function WeatherBox(props: CityProps): JSX.Element {
+function WeatherBox(props: IPropsWeatherBox): JSX.Element {
   console.log("good", props);
   return (
     <CLink to={`/city-detail/${props.name}`}>
