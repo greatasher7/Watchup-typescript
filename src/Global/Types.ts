@@ -1,29 +1,16 @@
-export interface IWeatherData {
-  weather: {
-    main: string;
-  }[];
-  main: {
-    temp: number;
-    temp_min: number;
-    temp_max: number;
-    pressure: number;
-    humidity: number;
-  };
-  name: string;
+// Data
+export interface IData {
   id: number;
-  wind: {
-    speed: number;
-    deg: number;
-  };
+  poster_path: string;
+  title?: string;
+  name?: string;
+  vote_average: number;
+  release_date?: string;
+  first_air_date?: string;
 }
 
-export interface IPropsWeatherBox {
-  name: string;
-  temp: number;
-  weather: string;
-  windSpeed: number;
-}
-
-export interface IPropsMatch {
+// Props
+export interface IRouteProps {
   id: string;
+  pathname: string;
 }
