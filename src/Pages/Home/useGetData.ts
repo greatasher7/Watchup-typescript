@@ -17,7 +17,7 @@ function useGetData(): IWeatherData[] {
   const [data, setData] = useState<IWeatherData[]>([]);
 
   // 각 도시의 데이터를 담을 배열
-  let arr = [];
+  let arr: IWeatherData[] = [];
 
   type FetchData = () => void;
   const getData: FetchData = async () => {
