@@ -2,10 +2,10 @@ import React from "react";
 import Helmet from "react-helmet";
 import useSearch from "./useSearch";
 import styled from "styled-components";
-import Loader from "Components/Loader";
-import Section from "Components/Section";
-import Message from "Components/Message";
-import Poster from "Components/Poster";
+import Loader from "../../Components/Loader";
+import Section from "../../Components/Section";
+import Message from "../../Components/Message";
+import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding: 100px 20px;

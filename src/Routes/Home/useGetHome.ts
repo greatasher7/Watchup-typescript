@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { moviesApi, tvApi } from "api";
-import { IData } from "Global/Types";
+import { moviesApi, tvApi } from "../../Api";
+import { IData } from "../../Global/Types";
 
 const useGetHome = (): [IData[], IData[], IData[], string, boolean] => {
   const [popularMovies, setPopularMovies] = useState<IData[]>([]);
   const [popularShow, setPopularShow] = useState<IData[]>([]);
   const [randomMovie, setRandomMovie] = useState<IData[]>([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
   const getData = async () => {
@@ -25,7 +25,7 @@ const useGetHome = (): [IData[], IData[], IData[], string, boolean] => {
       const randomId =
         popularMovies &&
         popularMovies.length > 0 &&
-        popularMovies.map((movie) => movie.id)[randomNumber];
+        popularMovies.map((movie: any) => movie.id)[randomNumber];
       const { data: randomMovie } = await moviesApi.movieDetail(randomId);
       setRandomMovie(randomMovie);
     } catch {

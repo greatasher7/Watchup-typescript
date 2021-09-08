@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import LogoImage from "../assets/logo.png";
 
 export const Header = styled.header`
   display: flex;
@@ -34,7 +35,7 @@ export const Logo = styled(Link)`
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(${require("assets/logo.png").default});
+  background-image: url(${LogoImage});
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: center;

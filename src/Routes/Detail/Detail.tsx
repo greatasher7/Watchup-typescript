@@ -2,12 +2,12 @@ import React from "react";
 import { RouteComponentProps } from "react-router";
 import Helmet from "react-helmet";
 import { IRouteProps } from "../../Global/Types";
-import Loader from "Components/Loader";
+import Loader from "../../Components/Loader";
 import useDetail from "./useDetail";
-import DetailIframe from "Components/DetailIframe";
-import DetailCredit from "Components/DetailCredit";
-import DetailReview from "Components/DetailReview";
-import DetailRelated from "Components/DetailRelated";
+import DetailIframe from "../../Components/DetailIframe";
+import DetailCredit from "../../Components/DetailCredit";
+import DetailReview from "../../Components/DetailReview";
+import DetailRelated from "../../Components/DetailRelated";
 import {
   Container,
   Backdrop,

@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import useGetMovie from "./useGetMovie";
-import Loader from "Components/Loader";
-import Message from "Components/Message";
-import Poster from "Components/Poster";
-import Section from "Components/Section";
+import Loader from "../../Components/Loader";
+import Message from "../../Components/Message";
+import Poster from "../../Components/Poster";
+import Section from "../../Components/Section";
 
 export default function MovieFrame({ match: { url }, title }) {
   const [result, error, loading] = useGetMovie(url);

@@ -1,35 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { youtubeApi } from "api";
-
-const Container = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 3vw;
-  justify-content: space-between;
-`;
-
-const Article = styled.article``;
-
-const VideoTitle = styled.h4`
-  margin-left: 0.5vw;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  @media screen and (max-width: 480px) {
-    font-size: 0.7rem;
-    margin-bottom: 0;
-    margin-left: 0.7vw;
-  }
-`;
-
-const Video = styled.iframe`
-  width: 100%;
-  height: 15vw;
-  border-radius: 15px;
-`;
+import { youtubeApi } from "../Api";
+import {
+  Container,
+  Article,
+  VideoTitle,
+  Video,
+} from "./Styles/DetailFrameStyles";
 
 const Iframe = ({ title }) => {
   const [id, setId] = useState([]);
@@ -56,7 +34,6 @@ const Iframe = ({ title }) => {
     } catch (e) {
       console.log(e);
       setError(e);
-    } finally {
     }
   };
   useEffect(() => {

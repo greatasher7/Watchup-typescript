@@ -13,10 +13,15 @@ const Title = styled.h2`
   position: relative;
   animation: appearSectionTitle 2s ease-in-out;
   @keyframes appearSectionTitle {
-    from{opacity: 0; top: 30px;}
-    to{opacity: 1; top: 0;}
+    from {
+      opacity: 0;
+      top: 30px;
+    }
+    to {
+      opacity: 1;
+      top: 0;
+    }
   }
-  
 `;
 
 const Grid = styled.div`
@@ -28,13 +33,13 @@ const Grid = styled.div`
   grid-row-gap: 40px;
   grid-column-gap: 5px;
 
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(auto-fit, 17%);
     margin-top: 2vh;
     grid-row-gap: 30px;
     grid-column-gap: 5px;
   }
-  @media screen and (max-width: 480px){
+  @media screen and (max-width: 480px) {
     grid-template-columns: repeat(auto-fit, 23%);
     grid-row-gap: 20px;
   }
@@ -51,8 +56,8 @@ Section.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ])
+    PropTypes.node,
+  ]),
 };
 
 export default Section;

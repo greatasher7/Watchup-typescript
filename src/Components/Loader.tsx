@@ -13,15 +13,12 @@ const Container = styled.div`
   top: 0;
   left: 0;
   z-index: 5;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, 0.8);
 `;
 
-const LoaderComponent = () => (
-    <Container>
-      <Loader 
-        type = "Oval"
-        color = "#e6bd0a"
-      />
+const LoaderComponent = (): JSX.Element => (
+  <Container>
+    <Loader type="Oval" color="#e6bd0a" />
   </Container>
 );
 

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { IData } from "Global/Types";
 
 const api = axios.create({
   baseURL: "https://api.themoviedb.org/3",
@@ -10,24 +9,24 @@ const api = axios.create({
 });
 
 export const moviesApi = {
-  nowPlaying: (page = 1): Promise<IData> =>
+  nowPlaying: (page = 1): any =>
     api.get("/movie/now_playing", { params: { page, limit: 50 } }),
-  upComing: (page = 1): Promise<IData> =>
+  upComing: (page = 1): any =>
     api.get("/movie/upcoming", { params: { page, limit: 50 } }),
-  popular: (page = 1): Promise<IData> =>
+  popular: (page = 1): any =>
     api.get("/movie/popular", { params: { page, limit: 50 } }),
-  topRated: (page = 1): Promise<IData> =>
+  topRated: (page = 1): any =>
     api.get("/movie/top_rated", { params: { page, limit: 50 } }),
-  movieDetail: (id) =>
+  movieDetail: (id: number): any =>
     api.get(`/movie/${id}`, {
       params: {
         append_to_reponse: "video",
       },
     }),
-  movieCredit: (id) => api.get(`/movie/${id}/credits`),
-  movieReview: (id) => api.get(`/movie/${id}/reviews`),
-  movieRelated: (id) => api.get(`/movie/${id}/similar`),
-  search: (term: string) =>
+  movieCredit: (id: number): any => api.get(`/movie/${id}/credits`),
+  movieReview: (id: number): any => api.get(`/movie/${id}/reviews`),
+  movieRelated: (id: number): any => api.get(`/movie/${id}/similar`),
+  search: (term: string): any =>
     api.get(`/search/movie`, {
       params: {
         query: term,
@@ -36,24 +35,24 @@ export const moviesApi = {
 };
 
 export const tvApi = {
-  topRated: (page = 1): Promise<IData> =>
+  topRated: (page = 1): any =>
     api.get("/tv/top_rated", { params: { page, limit: 50 } }),
-  popular: (page = 1): Promise<IData> =>
+  popular: (page = 1): any =>
     api.get("/tv/popular", { params: { page, limit: 50 } }),
-  airingToday: (page = 1): Promise<IData> =>
+  airingToday: (page = 1): any =>
     api.get("/tv/airing_today", { params: { page, limit: 50 } }),
-  onTheAir: (page = 1): Promise<IData> =>
+  onTheAir: (page = 1): any =>
     api.get("/tv/on_the_air", { params: { page, limit: 50 } }),
-  showDetail: (id) =>
+  showDetail: (id: number): any =>
     api.get(`/tv/${id}`, {
       params: {
         append_to_reponse: "video",
       },
     }),
-  showCredit: (id) => api.get(`/tv/${id}/credits`),
-  showReview: (id) => api.get(`/tv/${id}/reviews`),
-  showRelated: (id) => api.get(`/tv/${id}/similar`),
-  search: (term) =>
+  showCredit: (id: number): any => api.get(`/tv/${id}/credits`),
+  showReview: (id: number): any => api.get(`/tv/${id}/reviews`),
+  showRelated: (id: number): any => api.get(`/tv/${id}/similar`),
+  search: (term: string): any =>
     api.get(`/search/tv`, {
       params: {
         query: term,
@@ -62,7 +61,7 @@ export const tvApi = {
 };
 
 export const peopleApi = {
-  people: (page = 1) =>
+  people: (page = 1): any =>
     api.get("/trending/person", { params: { page, limit: 50 } }),
 };
 
@@ -77,5 +76,6 @@ const apiYoutube = axios.create({
 });
 
 export const youtubeApi = {
-  searchForId: (title) => apiYoutube.get("/search", { params: { q: title } }),
+  searchForId: (title: string): any =>
+    apiYoutube.get("/search", { params: { q: title } }),
 };

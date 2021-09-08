@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { moviesApi } from "api";
+import { moviesApi } from "../../Api";
 import useInfiniteScroll from "./useInfiniteScroll";
 import uniqBy from "lodash.uniqby";
 

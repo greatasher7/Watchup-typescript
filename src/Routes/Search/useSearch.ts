@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { tvApi, moviesApi } from "api";
+import { tvApi, moviesApi } from "../../Api";
 
 const useSearch = () => {
   const [movieResult, setMovieResult] = useState(null);

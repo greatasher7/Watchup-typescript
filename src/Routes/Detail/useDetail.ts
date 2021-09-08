@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
-import { moviesApi, tvApi } from "api";
+import { moviesApi, tvApi } from "../../Api";
 import { IRouteProps } from "../../Global/Types";
 
 const useDetail = (props: RouteComponentProps<IRouteProps>): any => {
