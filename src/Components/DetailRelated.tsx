@@ -11,7 +11,7 @@ import {
   Year,
 } from "./Styles/DetailRelatedStyles";
 
-const DetailRelated = ({ relatedResult }) => {
+const DetailRelated = ({ relatedResult }): JSX.Element => {
   return (
     <Container>
       <Title>Related Videos</Title>

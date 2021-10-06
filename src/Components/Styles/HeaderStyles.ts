@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import LogoImage from "../assets/logo.png";
+import LogoImage from "../../assets/logo.png";
 
 export const Header = styled.header`
   display: flex;
